@@ -4,8 +4,44 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-  <title>Meu Portfólio - Victor Gabriel</title>
+  <title>Portfólio - Victor Gabriel</title>
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Animação dos cards */
+    .card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Modal mais bonito */
+    .modal-content {
+      border-radius: 15px;
+      overflow: hidden;
+      animation: aparecer 0.4s ease;
+    }
+
+    @keyframes aparecer {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .modal-body img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+  </style>
 </head>
 
 <body>
@@ -13,7 +49,7 @@
     <img src="avatar.png" alt="avatar" class="rounded-circle" width="150" height="150">
     <p class="lead mt-3">Eu sou Aluno Victor Gabriel</p>
     <h1>Aluno de Programação</h1>
-    <p>Eu sou estudante do Colégio Júlio Mesquita, curso Desenvolvimento de Sistemas, gosto de esportes e trabalho na Kalunga do Estação como menor aprendiz. Após o trabalho costumo frequentar a academia e aos sábados faço curso de TI.</p>
+    <p>Sou estudante do Colégio Júlio Mesquita, faço Desenvolvimento de Sistemas, gosto de esportes e trabalho na Kalunga do Estação como menor aprendiz. Após o trabalho costumo frequentar a academia e aos sábados faço curso de TI.</p>
     <h5 class="mt-4">Minhas Habilidades</h5>
     <div>
       <span class="badge bg-secondary">HTML</span>
@@ -26,104 +62,125 @@
     <h2 class="text-center mb-4">Meus Projetos</h2>
     <div class="row g-4">
 
-      <!-- Projeto 1 -->
+      <!-- PROJETO 1 -->
       <div class="col-md-3">
         <div class="card h-100">
           <img src="img/SitePessoal.png" class="card-img-top" alt="Site Pessoal">
           <div class="card-body">
             <h5 class="card-title">Site Pessoal</h5>
             <p class="card-text">Um site para apresentar quem sou, minhas habilidades e contatos.</p>
-            <a href="#" class="btn btn-primary">Ver projeto</a>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalSitePessoal">Ver projeto</button>
           </div>
         </div>
       </div>
 
-      <!-- Projeto 2 -->
+      <!-- PROJETO 2 -->
       <div class="col-md-3">
         <div class="card h-100">
           <img src="img/aluraFlix.png" class="card-img-top" alt="AluraFlix">
           <div class="card-body">
             <h5 class="card-title">AluraFlix</h5>
             <p class="card-text">Um projeto para adicionar e listar vídeos favoritos.</p>
-            <a href="#" class="btn btn-primary">Ver projeto</a>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAluraFlix">Ver projeto</button>
           </div>
         </div>
       </div>
 
-      <!-- Projeto 3 -->
+      <!-- PROJETO 3 -->
       <div class="col-md-3">
         <div class="card h-100">
           <img src="img/barbearia.png" class="card-img-top" alt="Barbearia">
           <div class="card-body">
             <h5 class="card-title">Barbearia</h5>
             <p class="card-text">Site de uma barbearia moderna, com serviços e contato.</p>
-            <a href="#" class="btn btn-primary">Ver projeto</a>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalBarbearia">Ver projeto</button>
           </div>
         </div>
       </div>
 
-      <!-- Projeto 4 -->
+      <!-- PROJETO 4 -->
       <div class="col-md-3">
         <div class="card h-100">
           <img src="img/flashCard.png" class="card-img-top" alt="FlashCard">
           <div class="card-body">
             <h5 class="card-title">FlashCard</h5>
             <p class="card-text">Aplicação para revisar conteúdos através de flashcards.</p>
-            <a href="#" class="btn btn-primary">Ver projeto</a>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalFlashCard">Ver projeto</button>
           </div>
         </div>
       </div>
 
-      <!-- Projeto 5 -->
+      <!-- PROJETO 5 -->
       <div class="col-md-3">
         <div class="card h-100">
-          <img src="img/marioGame.png" class="card-img-top" alt="Jogo do Mario">
+          <img src="img/marioGame.png" class="card-img-top" alt="Mario Game">
           <div class="card-body">
             <h5 class="card-title">Mario Game</h5>
             <p class="card-text">Um jogo divertido inspirado no clássico Mario.</p>
-            <a href="#" class="btn btn-primary">Ver projeto</a>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalMarioGame">Ver projeto</button>
           </div>
         </div>
       </div>
 
-      <!-- Projeto 6 -->
+      <!-- PROJETO 6 -->
       <div class="col-md-3">
         <div class="card h-100">
           <img src="img/quizInterativo.png" class="card-img-top" alt="Quiz Interativo">
           <div class="card-body">
             <h5 class="card-title">Quiz Interativo</h5>
             <p class="card-text">Um quiz de perguntas e respostas feito com JavaScript.</p>
-            <a href="#" class="btn btn-primary">Ver projeto</a>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalQuiz">Ver projeto</button>
           </div>
         </div>
       </div>
 
-      <!-- Projeto 7 -->
+      <!-- PROJETO 7 -->
       <div class="col-md-3">
         <div class="card h-100">
           <img src="img/siteEscola.png" class="card-img-top" alt="Site da Escola">
           <div class="card-body">
             <h5 class="card-title">Site da Escola</h5>
             <p class="card-text">Página institucional da escola, com informações e links.</p>
-            <a href="#" class="btn btn-primary">Ver projeto</a>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEscola">Ver projeto</button>
           </div>
         </div>
       </div>
 
-      <!-- Projeto 8 -->
+      <!-- PROJETO 8 -->
       <div class="col-md-3">
         <div class="card h-100">
           <img src="img/JogoDoNumero.png" class="card-img-top" alt="Jogo do Número">
           <div class="card-body">
             <h5 class="card-title">Jogo do Número</h5>
             <p class="card-text">Um jogo onde o usuário tenta adivinhar o número secreto.</p>
-            <a href="#" class="btn btn-primary">Ver projeto</a>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalNumero">Ver projeto</button>
           </div>
         </div>
       </div>
 
     </div>
   </main>
+
+  <!-- MODAIS -->
+  <div class="modal fade" id="modalSitePessoal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Site Pessoal</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <img src="img/SitePessoal.png" alt="Site Pessoal">
+          <p>Este projeto apresenta minhas informações pessoais, habilidades e formas de contato.</p>
+        </div>
+        <div class="modal-footer">
+          <a href="#" target="_blank" class="btn btn-primary">Acessar projeto</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Você pode duplicar o modal acima e trocar o conteúdo para cada projeto -->
 
   <footer class="container py-5 text-center">
     <h2>Entre em contato</h2>
