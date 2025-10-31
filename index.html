@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
   <title>Portfólio - Victor Gabriel</title>
-  <link rel="stylesheet" href="style.css">
 
   <style>
     :root {
@@ -15,6 +14,7 @@
       --modal-bg: #ffffff;
       --btn-bg: #0d6efd;
       --btn-text: #ffffff;
+      --shadow-color: rgba(0, 0, 0, 0.2);
     }
 
     body.dark-mode {
@@ -24,29 +24,46 @@
       --modal-bg: #1f1f25;
       --btn-bg: #2563eb;
       --btn-text: #ffffff;
+      --shadow-color: rgba(255, 255, 255, 0.1);
     }
 
     body {
       background-color: var(--bg-color);
       color: var(--text-color);
       transition: background-color 0.3s ease, color 0.3s ease;
+      min-height: 100vh;
     }
 
     header, footer {
       color: var(--text-color);
     }
 
+    /* ======= CARTÕES ======= */
     .card {
       background-color: var(--card-bg);
       color: var(--text-color);
+      border: none;
+      border-radius: 15px;
+      overflow: hidden;
       transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+      box-shadow: 0 5px 10px var(--shadow-color);
     }
 
     .card:hover {
       transform: translateY(-8px) scale(1.03);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 15px 25px var(--shadow-color);
     }
 
+    .card-img-top {
+      transition: transform 0.4s ease, filter 0.4s ease;
+    }
+
+    .card:hover .card-img-top {
+      transform: scale(1.1);
+      filter: brightness(1.1);
+    }
+
+    /* ======= MODAL ======= */
     .modal-content {
       background-color: var(--modal-bg);
       color: var(--text-color);
@@ -67,22 +84,42 @@
       }
     }
 
+    /* ======= ZOOM ANIMADO ======= */
+    .modal-body {
+      text-align: center;
+    }
+
     .modal-body img {
       width: 100%;
       border-radius: 10px;
       margin-bottom: 15px;
+      transform: scale(0.9);
+      opacity: 0;
+      animation: zoomIn 0.6s ease forwards;
+      box-shadow: 0 10px 20px var(--shadow-color);
     }
 
+    @keyframes zoomIn {
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    /* ======= BOTÕES ======= */
     .btn-primary {
       background-color: var(--btn-bg);
       border-color: var(--btn-bg);
       color: var(--btn-text);
+      transition: filter 0.2s ease, transform 0.2s ease;
     }
 
     .btn-primary:hover {
       filter: brightness(1.1);
+      transform: scale(1.05);
     }
 
+    /* ======= BOTÃO DE TEMA ======= */
     .theme-toggle {
       position: absolute;
       top: 20px;
@@ -212,8 +249,7 @@
     </div>
   </main>
 
-  <!-- MODAIS (os mesmos que te mandei antes, mantêm-se idênticos) -->
-  <!-- ... cola aqui os modais anteriores ... -->
+  <!-- Seus modais originais aqui -->
 
   <footer class="container py-5 text-center">
     <h2>Entre em contato</h2>
