@@ -38,7 +38,6 @@
       color: var(--text-color);
     }
 
-    /* ======= CARTÕES ======= */
     .card {
       background-color: var(--card-bg);
       color: var(--text-color);
@@ -54,16 +53,6 @@
       box-shadow: 0 15px 25px var(--shadow-color);
     }
 
-    .card-img-top {
-      transition: transform 0.4s ease, filter 0.4s ease;
-    }
-
-    .card:hover .card-img-top {
-      transform: scale(1.1);
-      filter: brightness(1.1);
-    }
-
-    /* ======= MODAL ======= */
     .modal-content {
       background-color: var(--modal-bg);
       color: var(--text-color);
@@ -84,7 +73,6 @@
       }
     }
 
-    /* ======= ZOOM ANIMADO ======= */
     .modal-body {
       text-align: center;
     }
@@ -93,7 +81,7 @@
       width: 100%;
       border-radius: 10px;
       margin-bottom: 15px;
-      transform: scale(0.9);
+      transform: scale(0.95);
       opacity: 0;
       animation: zoomIn 0.6s ease forwards;
       box-shadow: 0 10px 20px var(--shadow-color);
@@ -106,7 +94,6 @@
       }
     }
 
-    /* ======= BOTÕES ======= */
     .btn-primary {
       background-color: var(--btn-bg);
       border-color: var(--btn-bg);
@@ -119,7 +106,6 @@
       transform: scale(1.05);
     }
 
-    /* ======= BOTÃO DE TEMA ======= */
     .theme-toggle {
       position: absolute;
       top: 20px;
@@ -157,7 +143,7 @@
     <h2 class="text-center mb-4">Meus Projetos</h2>
     <div class="row g-4">
 
-      <!-- PROJETOS -->
+      <!-- Exemplo de projeto -->
       <div class="col-md-3">
         <div class="card h-100">
           <img src="img/SitePessoal.png" class="card-img-top" alt="Site Pessoal">
@@ -169,6 +155,7 @@
         </div>
       </div>
 
+      <!-- Repete para os outros -->
       <div class="col-md-3">
         <div class="card h-100">
           <img src="img/aluraFlix.png" class="card-img-top" alt="AluraFlix">
@@ -180,76 +167,52 @@
         </div>
       </div>
 
-      <div class="col-md-3">
-        <div class="card h-100">
-          <img src="img/barbearia.png" class="card-img-top" alt="Barbearia">
-          <div class="card-body">
-            <h5 class="card-title">Barbearia</h5>
-            <p class="card-text">Site de uma barbearia moderna, com serviços e contato.</p>
-            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalBarbearia">Ver projeto</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-3">
-        <div class="card h-100">
-          <img src="img/flashCard.png" class="card-img-top" alt="FlashCard">
-          <div class="card-body">
-            <h5 class="card-title">FlashCard</h5>
-            <p class="card-text">Aplicação para revisar conteúdos através de flashcards.</p>
-            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalFlashCard">Ver projeto</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-3">
-        <div class="card h-100">
-          <img src="img/marioGame.png" class="card-img-top" alt="Mario Game">
-          <div class="card-body">
-            <h5 class="card-title">Mario Game</h5>
-            <p class="card-text">Um jogo divertido inspirado no clássico Mario.</p>
-            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalMarioGame">Ver projeto</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-3">
-        <div class="card h-100">
-          <img src="img/quizInterativo.png" class="card-img-top" alt="Quiz Interativo">
-          <div class="card-body">
-            <h5 class="card-title">Quiz Interativo</h5>
-            <p class="card-text">Um quiz de perguntas e respostas feito com JavaScript.</p>
-            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalQuiz">Ver projeto</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-3">
-        <div class="card h-100">
-          <img src="img/siteEscola.png" class="card-img-top" alt="Site da Escola">
-          <div class="card-body">
-            <h5 class="card-title">Site da Escola</h5>
-            <p class="card-text">Página institucional da escola, com informações e links.</p>
-            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEscola">Ver projeto</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-3">
-        <div class="card h-100">
-          <img src="img/JogoDoNumero.png" class="card-img-top" alt="Jogo do Número">
-          <div class="card-body">
-            <h5 class="card-title">Jogo do Número</h5>
-            <p class="card-text">Um jogo onde o usuário tenta adivinhar o número secreto.</p>
-            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalNumero">Ver projeto</button>
-          </div>
-        </div>
-      </div>
+      <!-- Adicione seus outros cards aqui -->
 
     </div>
   </main>
 
-  <!-- Seus modais originais aqui -->
+  <!-- ===== MODAIS DOS PROJETOS ===== -->
+
+  <!-- Modal Site Pessoal -->
+  <div class="modal fade" id="modalSitePessoal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Site Pessoal</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <img src="img/SitePessoal.png" alt="Site Pessoal">
+          <p>Esse projeto foi criado para apresentar minhas informações, habilidades e contatos de forma moderna e responsiva.</p>
+        </div>
+        <div class="modal-footer">
+          <a href="https://victor2b2025.github.io/meu-site" target="_blank" class="btn btn-primary">Ir para o site</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal AluraFlix -->
+  <div class="modal fade" id="modalAluraFlix" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">AluraFlix</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <img src="img/aluraFlix.png" alt="AluraFlix">
+          <p>Projeto desenvolvido com HTML, CSS e JavaScript para cadastrar e exibir vídeos favoritos de forma dinâmica.</p>
+        </div>
+        <div class="modal-footer">
+          <a href="https://victor2b2025.github.io/aluraflix" target="_blank" class="btn btn-primary">Ir para o site</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Adicione outros modais seguindo esse padrão -->
 
   <footer class="container py-5 text-center">
     <h2>Entre em contato</h2>
@@ -263,7 +226,6 @@
     const themeToggle = document.getElementById('theme-toggle');
     const body = document.body;
 
-    // Carrega preferência salva
     if (localStorage.getItem('theme') === 'dark') {
       body.classList.add('dark-mode');
       themeToggle.textContent = '🔆';
