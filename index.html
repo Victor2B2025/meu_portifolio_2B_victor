@@ -379,3 +379,10 @@
 
     themeToggle.addEventListener('click', () => {
       body.classList.toggle('dark-mode');
+      const darkMode = body.classList.contains('dark-mode');
+      localStorage.setItem('theme', darkMode ? 'dark' : 'light');
+      themeToggle.textContent = darkMode ? '🔆' : '🌙';
+    });
+  </script>
+</body>
+</html>
