@@ -369,20 +369,31 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
   <script>
-    const themeToggle = document.getElementById('theme-toggle');
-    const body = document.body;
+  const themeToggle = document.getElementById('theme-toggle');
+  const body = document.body;
 
-    if (localStorage.getItem('theme') === 'dark') {
-      body.classList.add('dark-mode');
+  // Checa se o modo escuro estava ativo antes
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark') {
+    body.classList.add('dark-mode');
+    themeToggle.textContent = '🔆'; // Sol = modo claro disponível
+  } else {
+    themeToggle.textContent = '🌙'; // Lua = modo escuro disponível
+  }
+
+  // Alterna o tema ao clicar
+  themeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    
+    // Atualiza o texto do botão e salva o estado
+    if (body.classList.contains('dark-mode')) {
+      localStorage.setItem('theme', 'dark');
       themeToggle.textContent = '🔆';
+    } else {
+      localStorage.setItem('theme', 'light');
+      themeToggle.textContent = '🌙';
     }
-
-    themeToggle.addEventListener('click', () => {
-      body.classList.toggle('dark-mode');
-      const darkMode = body.classList.contains('dark-mode');
-      localStorage.setItem('theme', darkMode ? 'dark' : 'light');
-      themeToggle.textContent = darkMode ? '🔆' : '🌙';
-    });
-  </script>
+  });
+</script>
 </body>
 </html>
